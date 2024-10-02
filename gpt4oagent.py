@@ -5,9 +5,6 @@ import pickle
 import json
 import asyncio
 from colorama import Fore, Style
-from openai import OpenAI
-
-client = OpenAI()
 
 system = [
     {
