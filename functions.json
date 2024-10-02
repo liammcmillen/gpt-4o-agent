@@ -1,0 +1,16 @@
+[
+  {
+    "name": "run_bash_command",
+    "description": "Run a bash command on a Debian 12 system.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "The command to be run."
+        }
+      },
+      "required": ["command"]
+    }
+  }
+]
