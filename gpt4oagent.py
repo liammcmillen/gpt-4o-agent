@@ -44,8 +44,8 @@ def chat_completion_request(messages, functions=None, function_call=None, model=
         )
         return response
     except Exception as e:
-        print("Unable to generate ChatCompletion response")
-        print(f"Exception: {e}")
+        print(Fore.RED + "Unable to generate ChatCompletion response")
+        print(Fore.RED + f"Exception: {e}")
         return e
 
 
