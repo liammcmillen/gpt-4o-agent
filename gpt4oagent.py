@@ -14,7 +14,7 @@ system = [
 ]
 
 
-def chat_completion_request(messages, functions=None, function_call=None, model="gpt-4o-mini", max_tokens=4096):
+def chat_completion_request(messages, functions=None, function_call=None, model="gpt-4o-2024-08-06", max_tokens=4096):
     """Make a request to the OpenAI Chat API to generate responses."""
     headers = {
         "Content-Type": "application/json",
