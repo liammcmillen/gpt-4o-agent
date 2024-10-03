@@ -2,4 +2,4 @@ requests>=2.31.0
 colorama>=0.4.6
 beautifulsoup4>=4.12.3
 requests-html>=0.10.0
-googlesearch-python
+google=3.0.0
