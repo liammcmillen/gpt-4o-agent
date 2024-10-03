@@ -21,7 +21,6 @@ system = [
 
 
 def chat_completion_request(messages, functions=None, function_call=None, model="gpt-4o", max_tokens=4096):
-    """Make a request to the OpenAI Chat API to generate responses."""
     headers = {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + os.environ.get('OPENAI_API_KEY')
@@ -108,7 +107,6 @@ functions_dict = {
 
 class LLMAgent:
     def process_command(self, command):
-        """Process a command and interact with the GPT-4o model."""
         try:
             if not os.path.exists("context/context.pickle"):
                 with open("context/context.pickle", "wb") as write_file:
@@ -169,7 +167,6 @@ class LLMAgent:
 
 
 def interactive_shell():
-    """Start an interactive shell to interact with the GPT-4o model."""
     agent = LLMAgent()
     print("Starting interactive shell with GPT-4o. Type 'exit' to leave.")
     while True:
