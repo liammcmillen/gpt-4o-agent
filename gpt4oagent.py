@@ -14,8 +14,10 @@ system = [
     }
 ]
 
+
 with open("functions.json", 'r') as file:
     functions = json.load(file)
+
 
 class LLMAgent:
     def process_command(self, command):
@@ -77,6 +79,7 @@ class LLMAgent:
         except Exception as e:
             print(Fore.RED + f"{e}")
 
+
 def interactive_shell():
     agent = LLMAgent()
     print("Starting interactive shell with GPT-4o. Type 'exit' to leave.")
@@ -87,6 +90,7 @@ def interactive_shell():
             print("Goodbye!")
             break
         agent.process_command(command)
+
 
 if __name__ == '__main__':
     interactive_shell()
