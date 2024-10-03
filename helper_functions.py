@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 session = HTMLSession()
 
+
 def chat_completion_request(messages, functions=None, function_call=None, model='gpt-4o-mini', max_tokens=4096):
     headers = {
         'Content-Type': 'application/json',
@@ -38,10 +39,12 @@ def chat_completion_request(messages, functions=None, function_call=None, model=
         print(Fore.RED + f'Exception: {e}')
         return e
 
+
 def execute_function(function_name, function_args):
     print(Fore.YELLOW + Style.BRIGHT + f'Executing function: {function_name} with arguments: {function_args}' + Style.RESET_ALL)
     function_to_call = functions_dict[function_name]
     return function_to_call(**function_args)
+
 
 def google_search(query):
     print(Fore.YELLOW + Style.BRIGHT + f'Searching Google for: {query}' + Style.RESET_ALL)
@@ -52,15 +55,18 @@ def google_search(query):
 
     return urls
 
+
 def run_bash_command(command):
     print(Fore.YELLOW + Style.BRIGHT + f'Running bash command: {command}' + Style.RESET_ALL)
     result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return result.stdout.decode('utf-8'), result.stderr.decode('utf-8')
 
+
 def fetch_links(url):
     print(Fore.YELLOW + Style.BRIGHT + f'Retrieving absolute links from {url}' + Style.RESET_ALL)
     response = session.get(url)
     return response.html.absolute_links
+
 
 def fetch_website_text(url):
     print(Fore.YELLOW + Style.BRIGHT + f'Reading from {url}' + Style.RESET_ALL)
@@ -74,6 +80,7 @@ def fetch_website_text(url):
         return cleaned_text
     else:
         return f'Error: Unable to fetch the website. Status code: {response.status_code}'
+
 
 functions_dict = {
     "run_bash_command": run_bash_command,
