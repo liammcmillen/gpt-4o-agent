@@ -59,11 +59,7 @@ with open("functions.json", 'r') as file:
 def execute_function(function_name, function_args):
     print(Fore.YELLOW + Style.BRIGHT + f"Executing function: {function_name} with arguments: {function_args}" + Style.RESET_ALL)
     function_to_call = functions_dict[function_name]
-
-    if asyncio.iscoroutinefunction(function_to_call):
-        return function_to_call(**function_args)
-    else:
-        return function_to_call(**function_args)
+    return function_to_call(**function_args)
 
 
 def google_search(query):
