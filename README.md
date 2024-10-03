@@ -46,7 +46,7 @@ This basic agent, powered by OpenAI's GPT-4o model, is designed to assist with i
    ```
 ## Usage
 
-Once the agent is running, it will listen for commands and execute them on your Linux machine. Examples of usage include installing packages, debugging system issues, and more.
+Once the agent is running, it will listen for input and respond accordingly including executing commands on your Linux machine. Examples of usage include installing packages, debugging system issues, and more.
 
 Example usages:
 
