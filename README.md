@@ -1,5 +1,5 @@
 # About the project
-This basic agent, powered by OpenAI's GPT-4o model, is designed to assist with installation and debugging tasks on Linux machines by executing bash commands directly. USE AT YOUR OWN RISK, this program essentially has free reign over your linux machine, this is obviously a huge security risk and I heavily recommend making backups of your system on a separate device.
+This basic agent, powered by OpenAI's GPT-4o model, is designed to assist with installation and debugging tasks on Linux machines by executing bash commands directly. USE AT YOUR OWN RISK, this program essentially has free reign over your linux machine, this is obviously a huge security risk and I heavily recommend making backups of your system on a separate device and/or first experimenting with it on a VM
 
 ## Prerequisites
 
