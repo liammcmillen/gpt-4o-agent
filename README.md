@@ -50,11 +50,13 @@ Once the agent is running, it will listen for commands and execute them on your 
 
 Example usages:
 
-![image](https://github.com/user-attachments/assets/7cb68a2b-65e3-4eff-b449-ce43fd7419cb)
+![image](https://github.com/user-attachments/assets/1252755a-944f-40ba-9983-90412cbc9a16)
 
-![image](https://github.com/user-attachments/assets/6b31d2bc-3674-48c2-92c4-ce1b5481bab8)
+![image](https://github.com/user-attachments/assets/d4949990-9f6c-4519-a4a5-e023d802e806)
 
-![image](https://github.com/user-attachments/assets/3cd4650a-3ccc-498c-bfd9-d6a05784c599)
+![image](https://github.com/user-attachments/assets/8e42cd8c-4f14-4652-a1fd-6a25fe910361)
+
+![image](https://github.com/user-attachments/assets/16fcde7b-89dc-435d-b9ab-d0e5c24c7572)
 
 ## License
 
