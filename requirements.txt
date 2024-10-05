@@ -3,5 +3,4 @@ colorama==0.4.6
 googlesearch-python==1.2.5
 requests-html==0.10.0
 beautifulsoup4==4.12.3
-pillow==10.4.0
 streamlit==1.39.0
