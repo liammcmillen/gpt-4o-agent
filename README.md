@@ -42,19 +42,19 @@ This basic agent, powered by OpenAI's GPT-4o model, is designed to assist with i
 5. **Run the Agent:**
 
    ```bash
-   python3 gpt4oagent.py
+   streamlit run gpt4oagent.py
    ```
 ## Usage
 
-Once the agent is running, it will listen for input and respond accordingly including executing commands on your Linux machine. Examples of usage include installing packages, debugging system issues, and more.
+Once the agent is running, it will listen for commands and execute them on your Linux machine. Examples of usage include installing packages, debugging system issues, and more.
 
 Example usages:
 
-![image](https://github.com/user-attachments/assets/7dca173e-2287-4e66-8d0b-d093f14dd486)
+![image](https://github.com/user-attachments/assets/7cb68a2b-65e3-4eff-b449-ce43fd7419cb)
 
-![image](https://github.com/user-attachments/assets/aa18dbfc-e7ca-42a1-b23d-e704540113d6)
+![image](https://github.com/user-attachments/assets/6b31d2bc-3674-48c2-92c4-ce1b5481bab8)
 
-![image](https://github.com/user-attachments/assets/51096386-1383-4725-b970-ec490664254e)
+![image](https://github.com/user-attachments/assets/3cd4650a-3ccc-498c-bfd9-d6a05784c599)
 
 ## License
 

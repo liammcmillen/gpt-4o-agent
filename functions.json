@@ -54,5 +54,13 @@
       },
       "required": ["url"]
     }
+  },
+  {
+    "name": "capture_screenshot",
+    "description": "Capture and save an image of the desktop for viewing.",
+    "returns": {
+      "type:": "string",
+      "description": "The relative path to the saved image."
+    }
   }
 ]
