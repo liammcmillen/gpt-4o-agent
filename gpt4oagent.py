@@ -51,6 +51,9 @@ class CommandExecutor:
         return stdout if result.returncode == 0 else stderr
 
 class WebSearcher:
+    def __init__(self, user_agent: str):
+        self.headers = {'User-Agent': user_agent}
+            
     @staticmethod
     def google_search(query):
         DebugLogger.log(f"Performing Google search for: {query}", level='SYSTEM')
@@ -71,7 +74,7 @@ class WebSearcher:
             error_msg = f"Error fetching links from URL: {e}"
             DebugLogger.log(error_msg, level='ERROR')
             return []
-
+            
     @staticmethod
     def fetch_website_text(url):
         DebugLogger.log(f"Fetching text from URL: {url}", level='SYSTEM')
@@ -80,9 +83,9 @@ class WebSearcher:
             DebugLogger.log(f"HTTP status code: {response.status_code}", level='INFO')
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
-                text_preview = soup.get_text(separator=' ', strip=True)[:200]
-                DebugLogger.log(f"Fetched text preview: {text_preview}", level='INFO')
-                return text_preview
+                full_text = soup.get_text(separator=' ', strip=True)
+                DebugLogger.log(f"Fetched text preview: {full_text[:200]}", level='INFO')
+                return full_text
             else:
                 error_msg = f'Error: Unable to fetch the website. Status code: {response.status_code}'
                 DebugLogger.log(error_msg, level='ERROR')
