@@ -158,7 +158,7 @@ class ChatAssistant:
             json.dump(st.session_state.messages, f)
 
     def chat_completion_request(self, chat_history, functions_data=None, function_call=None):
-        DebugLogger.log("Sending request to chat completion API", level='SYSTEM')
+        DebugLogger.log("Sending request to chat completion API.", level='SYSTEM')
         headers = {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + os.environ.get('OPENAI_API_KEY')
