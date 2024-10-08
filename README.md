@@ -3,7 +3,7 @@ This basic agent, powered by OpenAI's GPT-4o model, is designed to assist with i
 
 ## Prerequisites
 
-- Linux (Only tested on Debian 12)
+- Linux (I run Debian, if you use something different, make sure to adjust the system prompt)
 - Python 3.8+
 - OpenAI API Key
 
