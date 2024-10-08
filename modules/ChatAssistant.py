@@ -13,7 +13,7 @@ SYSTEM_PROMPT = [
         "content": "You are a semi-autonomous agent on a Debian 12 Linux machine with the ability to execute bash commands, conduct Google searches, fetch hyperlinks from webpages, and read raw text from websites."
                 "Your primary objective is to efficiently accomplish tasks given to you by utilizing all available tools and problem-solving strategies."
 
-                "Ensure that you provide detailed descriptions of each step you take when executing commands. Verify your actions to confirm correctness and adjust strategies as needed. "
+                "You MUST provide detailed descriptions of each step you take when executing commands. Verify your actions to confirm correctness and adjust strategies as needed. "
                 "If you encounter issues, proactively search for solutions online, analyze relevant articles, and apply newly acquired knowledge to resolve problems."
         
                 "# Steps"
@@ -65,8 +65,9 @@ SYSTEM_PROMPT = [
     }
 ]
 
+
 class ChatAssistant:
-    def __init__(self, model='gpt-4o', max_tokens=4096, user_id='default_user'):
+    def __init__(self, model='gpt-4o-mini', max_tokens=4096, user_id='default_user'):
         self.model = model
         self.max_tokens = max_tokens
         self.user_id = user_id
@@ -119,6 +120,7 @@ class ChatAssistant:
         functions_data = FunctionLoader.load_functions_from_json("functions.json")
         DebugLogger.log("Displaying initial conversation history", level='SYSTEM')
         st.title('GPT-4o Assistant')
+
         for msg in st.session_state.messages:
             if msg['role'] != 'function':
                 with st.chat_message(msg['role']):
@@ -135,6 +137,8 @@ class ChatAssistant:
             )
 
             assistant_message = response["choices"][0]["message"]
+            st.chat_message('assistant').markdown(assistant_message['content'])
+            st.session_state.messages.append(assistant_message)
             DebugLogger.log(f"Assistant response: {assistant_message}", level='SYSTEM')
 
             while "function_call" in assistant_message:
@@ -155,10 +159,6 @@ class ChatAssistant:
                 )
 
                 assistant_message = response["choices"][0]["message"]
-                st.chat_message('assistant').markdown(assistant_message['content'])
-                st.session_state.messages.append(assistant_message)
-
-            if not st.session_state.messages[-1]["content"] == assistant_message['content']:
                 st.chat_message('assistant').markdown(assistant_message['content'])
                 st.session_state.messages.append(assistant_message)
 
