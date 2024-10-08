@@ -116,8 +116,7 @@ class ChatAssistant:
             DebugLogger.log(f"Request exception: {e}", level='ERROR')
             return None
 
-    def run(self):
-        functions_data = FunctionLoader.load_functions_from_json("functions.json")
+    def display_conversation_history(self):
         DebugLogger.log("Displaying initial conversation history", level='SYSTEM')
         st.title('GPT-4o Assistant')
 
@@ -125,6 +124,9 @@ class ChatAssistant:
             if msg['role'] != 'function':
                 with st.chat_message(msg['role']):
                     st.markdown(msg['content'])
+
+    def run(self):
+        functions_data = FunctionLoader.load_functions_from_json("functions.json")
 
         if prompt := st.chat_input('Enter user message...'):
             DebugLogger.log(f"Received user input: {prompt}", level='SYSTEM')
