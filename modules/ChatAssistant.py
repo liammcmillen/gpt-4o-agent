@@ -67,7 +67,7 @@ SYSTEM_PROMPT = [
 
 
 class ChatAssistant:
-    def __init__(self, model='gpt-4o-mini', max_tokens=4096, user_id='default_user'):
+    def __init__(self, model='gpt-4o', max_tokens=4096, user_id='default_user'):
         self.model = model
         self.max_tokens = max_tokens
         self.user_id = user_id
