@@ -1,0 +1,66 @@
+[
+  {
+    "name": "run_bash_command",
+    "description": "Run a bash command on a Debian 12 system.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "The command to be run. Must be a valid shell command."
+        }
+      },
+      "required": ["command"]
+    }
+  },
+  {
+    "name": "google_search",
+    "description": "Run a google search on a given string.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The query to be searched. Must be a string."
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "fetch_links",
+    "description": "Retrieve all linked absolute links on a webpage from a url.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The url to retrieve links from."
+        }
+      },
+      "required": ["url"]
+    }
+  },
+  {
+    "name": "fetch_website_text",
+    "description": "Fetch and clean text from a website url.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The url to retrieve text from."
+        }
+      },
+      "required": ["url"]
+    }
+  },
+  {
+    "name": "capture_screenshot",
+    "description": "Capture and save an image of the desktop for viewing.",
+    "returns": {
+      "type:": "string",
+      "description": "The relative path to the saved image."
+    }
+  }
+]
