@@ -144,7 +144,6 @@ class ChatAssistant:
             DebugLogger.log(f"Assistant response: {assistant_message}", level='SYSTEM')
 
             while "function_call" in assistant_message:
-                st.session_state.messages.append(assistant_message)
                 function_name = assistant_message["function_call"]["name"]
                 function_args = json.loads(assistant_message["function_call"]["arguments"])
                 result = FunctionExecutor.execute_function(function_name, function_args)
